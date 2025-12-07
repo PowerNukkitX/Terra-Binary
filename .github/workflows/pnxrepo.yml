@@ -20,12 +20,10 @@ jobs:
           java-version: 21
 
       - name: Configure Maven settings
-        uses: s4u/maven-settings-action@v3.1.0
+        uses: s4u/maven-settings-action@v4.0.0
         with:
-          servers:
-            - id: pnx-repo
-              username: ${{ secrets.MVN_USERNAME }}
-              password: ${{ secrets.MVN_PASSWORD }}
+          servers: |
+            [{ "id": "pnx-repo", "username": "${{ secrets.PNX_REPO_USERNAME }}", "password": "${{ secrets.PNX_REPO_PASSWORD }}" }]
 
       - name: Deploy Terra to PNX Repo
         run: |

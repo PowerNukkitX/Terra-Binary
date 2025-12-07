@@ -22,7 +22,7 @@ jobs:
       - name: Configure Maven settings
         uses: s4u/maven-settings-action@v3.1.0
         with:
-          servers: |
+          servers:
             - id: pnx-repo
               username: ${{ secrets.MVN_USERNAME }}
               password: ${{ secrets.MVN_PASSWORD }}
